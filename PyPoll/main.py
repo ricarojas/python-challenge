@@ -39,6 +39,7 @@ with open("output_pypoll.txt", "w") as output_pypoll:
         Charles_per_rounded = round(Charles_per * 100, 3)
         Diana_per_rounded = round(Diana_per * 100, 3)
         Raymon_per_rounded = round(Raymon_per * 100, 3)
+        line = "{} testing\n".format(Charles_per_rounded)
 
     #print Header
         output_pypoll.write (f"Election Results" + "\n")
@@ -46,11 +47,19 @@ with open("output_pypoll.txt", "w") as output_pypoll:
     #print Total Votes
         output_pypoll.write ("Total votes: "+ str(total_votes)+ " \n")
         output_pypoll.write (f"----------------------------------------------------"+ "\n")
-    #print candidates, percentages and votes using dictionary key
-        output_pypoll.write (f"Charles Casper Stockam :" + str(Charles_per_rounded) +str(Charles_total) + "\n")
-        print(f"Diana DeGette: {Diana_per:.3%}", Diana_total)
-        print(f"Raymon Anthony Doane: {Raymon_per:.3%}", Raymon_total)
-        print("----------------------------------------------------")
+    #print candidates, percentages and votes using dictionary key and formatting
+        
+        line = "Charles Casper Stockam : {}% ({})\n".format(Charles_per_rounded, Charles_total)
+        output_pypoll.write (line)
+        line = "Diana DeGette: {}% ({})\n".format(Diana_per_rounded, Diana_total)
+        output_pypoll.write (line)
+        line = "Raymon Anthony Doane: {}% ({})\n".format(Raymon_per_rounded, Raymon_total)
+        output_pypoll.write (line)
+        #output_pypoll.write (f"Charles Casper Stockam :" + str(Charles_per_rounded) +str(Charles_total) + "\n")
+        #print(f"Diana DeGette: {Diana_per:.3%}", Diana_total)
+        #print(f"Raymon Anthony Doane: {Raymon_per:.3%}", Raymon_total)
+        output_pypoll.write (f"----------------------------------------------------" + "\n")
+    
     #print the winner by overall votes, using max function
     output_pypoll.write (f"Winner: "+ (max(d, key=d.get)) + "\n")
     output_pypoll.write (f"----------------------------------------------------")
