@@ -1,0 +1,7 @@
+Financial Analysis 
+----------------------------------------
+Total months: 86 
+Total: 22564198 
+Average Change: $265461 
+Greatest increase in profits is: 1141840 
+Greatest decrease in profits is: -1066544 
